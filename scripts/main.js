@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       telefono: (value) => value.trim().length >= 7 || "Ingresa un teléfono válido.",
       correo: (value) =>
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) || "Ingresa un correo válido.",
-      "tipo-porton": (value) => value.trim() !== "" || "Selecciona una opción.",
+      tipo_porton: (value) => value.trim() !== "" || "Selecciona una opción.",
       ubicacion: (value) => value.trim().length >= 3 || "Ingresa una ubicación válida.",
       mensaje: (value) => value.trim().length >= 10 || "Describe mejor tu proyecto.",
     };
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    quoteForm.addEventListener("submit", (event) => {
+    quoteForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       let isValid = true;
 
@@ -199,11 +199,50 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      quoteForm.reset();
+      const submitButton = quoteForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : "";
 
-      if (successMessage) {
-        successMessage.textContent =
-          "Tu solicitud fue validada correctamente. Ahora puedes conectar este formulario con EmailJS, Formspree o tu backend.";
+      try {
+        if (typeof emailjs === "undefined") {
+          throw new Error("EmailJS no está cargado.");
+        }
+
+        if (successMessage) {
+          successMessage.textContent = "";
+          successMessage.style.color = "";
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = "Enviando...";
+        }
+
+        await emailjs.sendForm(
+          "service_0bbe3qo",
+          "template_mnnl5hi",
+          quoteForm
+        );
+
+        quoteForm.reset();
+
+        if (successMessage) {
+          successMessage.textContent =
+            "Tu solicitud fue enviada correctamente. Te contactaremos pronto.";
+          successMessage.style.color = "var(--primary)";
+        }
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error);
+
+        if (successMessage) {
+          successMessage.textContent =
+            "Hubo un problema al enviar la solicitud. Revisa tu configuración e inténtalo nuevamente.";
+          successMessage.style.color = "#d14d41";
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
       }
     });
 

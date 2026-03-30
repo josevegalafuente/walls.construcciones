@@ -261,11 +261,11 @@ textarea {
   background:
     linear-gradient(
       90deg,
-      var(--hero-overlay-1) 0%,
-      var(--hero-overlay-2) 40%,
-      var(--hero-overlay-3) 100%
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.62) 40%,
+      rgba(10, 10, 10, 0.28) 100%
     ),
-    url("../images/home/hero-porton.jpg") center center / cover no-repeat;
+    url("../images/cover.jpeg") center center / cover no-repeat;
 }
 
 .hero-home .container {
@@ -289,7 +289,7 @@ textarea {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.8rem;
+  font-size: 1.04rem;
   margin-bottom: 0.8rem;
 }
 
@@ -304,6 +304,7 @@ h3 {
 .page-hero h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .hero-text,
@@ -373,8 +374,8 @@ h3 {
 }
 
 .hero-badges li {
-  background: var(--badge-bg);
-  color: var(--primary);
+  background: var(--primary);
+  color: var(--white);
   border-radius: 999px;
   padding: 0.55rem 0.9rem;
   font-size: 0.92rem;
@@ -900,15 +901,15 @@ html[data-theme="dark"] .hero-card-highlight {
   }
 
   .hero-home {
-    background:
-      linear-gradient(
-        180deg,
-        var(--hero-overlay-1) 0%,
-        var(--hero-overlay-2) 55%,
-        var(--hero-overlay-3) 100%
-      ),
-      url("../images/home/hero-porton.jpg") center center / cover no-repeat;
-  }
+  background:
+    linear-gradient(
+      180deg,
+      rgba(143, 141, 138, 0.86) 0%,
+      rgba(87, 87, 87, 0.68) 55%,
+      rgba(247, 243, 236, 0.35) 100%
+    ),
+    url("../images/cover.jpeg") center center / cover no-repeat;
+}
 
   .slider {
     gap: 0.6rem;
