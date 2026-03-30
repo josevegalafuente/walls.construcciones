@@ -47,25 +47,38 @@
         <span class="logo-text">Walls Construcciones</span>
       </a>
 
-      <button
-        class="nav-toggle"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <nav class="nav" id="primary-navigation">
+          <ul class="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portones.html">Portones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a class="active" href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
+          </ul>
+        </nav>
 
-      <nav class="nav" id="primary-navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="portones.html">Portones</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a class="active" href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
-        </ul>
-      </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Cambiar entre modo claro y modo oscuro"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-text">Modo oscuro</span>
+        </button>
+
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -96,52 +109,82 @@
         </div>
 
         <div class="projects-grid">
-          <article class="project-card" data-category="residencial automatizado">
-            <span class="project-tag">Residencial</span>
-            <h3>Portón corredizo familiar</h3>
-            <p>
-              Proyecto con automatización, estructura metálica y diseño moderno para vivienda.
-            </p>
+          <article class="project-card project-card-image" data-category="residencial automatizado">
+            <div class="project-media">
+              <img src="images/portones-corredizo.jpg" alt="Portón corredizo residencial automatizado" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Residencial</span>
+              <h3>Portón corredizo familiar</h3>
+              <p>
+                Proyecto con automatización, estructura metálica y diseño moderno para vivienda.
+              </p>
+            </div>
           </article>
 
-          <article class="project-card" data-category="comercial">
-            <span class="project-tag">Comercial</span>
-            <h3>Acceso reforzado para negocio</h3>
-            <p>
-              Solución resistente para ingreso vehicular en entorno de uso frecuente.
-            </p>
+          <article class="project-card project-card-image" data-category="comercial">
+            <div class="project-media">
+              <img src="images/acceso-reforzado.png" alt="Acceso reforzado para negocio" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Comercial</span>
+              <h3>Acceso reforzado para negocio</h3>
+              <p>
+                Solución resistente para ingreso vehicular en entorno de uso frecuente.
+              </p>
+            </div>
           </article>
 
-          <article class="project-card" data-category="automatizado">
-            <span class="project-tag">Automatizado</span>
-            <h3>Sistema con motor y control remoto</h3>
-            <p>
-              Implementación orientada a comodidad, control y seguridad de acceso.
-            </p>
+          <article class="project-card project-card-image" data-category="automatizado">
+            <div class="project-media">
+              <img src="images/sistema-motor.png" alt="Sistema automatizado con motor y control remoto" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Automatizado</span>
+              <h3>Sistema con motor y control remoto</h3>
+              <p>
+                Implementación orientada a comodidad, control y seguridad de acceso.
+              </p>
+            </div>
           </article>
 
-          <article class="project-card" data-category="residencial">
-            <span class="project-tag">Residencial</span>
-            <h3>Diseño personalizado para vivienda</h3>
-            <p>
-              Trabajo adaptado al estilo arquitectónico del cliente y a sus medidas.
-            </p>
+          <article class="project-card project-card-image" data-category="residencial">
+            <div class="project-media">
+              <img src="images/diseno-personalizado.png" alt="Diseño personalizado de portón para vivienda" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Residencial</span>
+              <h3>Diseño personalizado para vivienda</h3>
+              <p>
+                Trabajo adaptado al estilo arquitectónico del cliente y a sus medidas.
+              </p>
+            </div>
           </article>
 
-          <article class="project-card" data-category="comercial automatizado">
-            <span class="project-tag">Comercial</span>
-            <h3>Portón para área de operaciones</h3>
-            <p>
-              Proyecto funcional para acceso seguro con sistema automatizado.
-            </p>
+          <article class="project-card project-card-image" data-category="comercial automatizado">
+            <div class="project-media">
+              <img src="images/area-operaciones.png" alt="Portón automatizado para área comercial" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Comercial</span>
+              <h3>Portón para área de operaciones</h3>
+              <p>
+                Proyecto funcional para acceso seguro con sistema automatizado.
+              </p>
+            </div>
           </article>
 
-          <article class="project-card" data-category="residencial automatizado">
-            <span class="project-tag">Residencial</span>
-            <h3>Acceso principal con acabado moderno</h3>
-            <p>
-              Integración de automatización y estética para una experiencia más cómoda.
-            </p>
+          <article class="project-card project-card-image" data-category="residencial automatizado">
+            <div class="project-media">
+              <img src="images/acabado-moderno.jpeg" alt="Acceso principal residencial con acabado moderno" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Residencial</span>
+              <h3>Acceso principal con acabado moderno</h3>
+              <p>
+                Integración de automatización y estética para una experiencia más cómoda.
+              </p>
+            </div>
           </article>
         </div>
       </div>
@@ -243,7 +286,7 @@
       </div>
 
       <div>
-        <h3>Links Rapidos</h3>
+        <h3>Links Rápidos</h3>
         <ul class="footer-links">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="portones.html">Portones</a></li>

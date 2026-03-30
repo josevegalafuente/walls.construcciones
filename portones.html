@@ -47,25 +47,38 @@
         <span class="logo-text">Walls Construcciones</span>
       </a>
 
-      <button
-        class="nav-toggle"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <nav class="nav" id="primary-navigation">
+          <ul class="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a class="active" href="portones.html">Portones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
+          </ul>
+        </nav>
 
-      <nav class="nav" id="primary-navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a class="active" href="portones.html">Portones</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
-        </ul>
-      </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Cambiar entre modo claro y modo oscuro"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-text">Modo oscuro</span>
+        </button>
+
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -88,37 +101,57 @@
           <h2>Opciones según uso y espacio</h2>
         </div>
 
-        <div class="cards-grid">
-          <article class="info-card">
-            <h3>Portones corredizos</h3>
-            <p>
-              Ideales para entradas con espacio lateral disponible. Son prácticos,
-              seguros y compatibles con automatización.
-            </p>
+        <div class="cards-grid cards-grid-visual">
+          <article class="info-card info-card-image">
+            <div class="card-media">
+              <img src="images/corredizo.png" alt="Portón corredizo moderno para vivienda o negocio" />
+            </div>
+            <div class="card-content">
+              <h3>Portones corredizos</h3>
+              <p>
+                Ideales para entradas con espacio lateral disponible. Son prácticos,
+                seguros y compatibles con automatización.
+              </p>
+            </div>
           </article>
 
-          <article class="info-card">
-            <h3>Portones batientes</h3>
-            <p>
-              Una solución clásica y elegante, adecuada para accesos residenciales
-              y espacios con apertura frontal.
-            </p>
+          <article class="info-card info-card-image">
+            <div class="card-media">
+              <img src="images/portones-batientes.png" alt="Portón batiente elegante para acceso residencial" />
+            </div>
+            <div class="card-content">
+              <h3>Portones batientes</h3>
+              <p>
+                Una solución clásica y elegante, adecuada para accesos residenciales
+                y espacios con apertura frontal.
+              </p>
+            </div>
           </article>
 
-          <article class="info-card">
-            <h3>Portones levadizos</h3>
-            <p>
-              Recomendados en ciertos garajes y áreas donde se busca un sistema
-              compacto con apertura vertical.
-            </p>
+          <article class="info-card info-card-image">
+            <div class="card-media">
+              <img src="images/mantenimiento.png" alt="Portón levadizo compacto para garaje" />
+            </div>
+            <div class="card-content">
+              <h3>Portones levadizos</h3>
+              <p>
+                Recomendados en ciertos garajes y áreas donde se busca un sistema
+                compacto con apertura vertical.
+              </p>
+            </div>
           </article>
 
-          <article class="info-card">
-            <h3>Portones personalizados</h3>
-            <p>
-              Diseños adaptados a medidas, estilo arquitectónico y requerimientos
-              específicos del cliente.
-            </p>
+          <article class="info-card info-card-image">
+            <div class="card-media">
+              <img src="images/porton-personalizado.png" alt="Portón personalizado con diseño a medida" />
+            </div>
+            <div class="card-content">
+              <h3>Portones personalizados</h3>
+              <p>
+                Diseños adaptados a medidas, estilo arquitectónico y requerimientos
+                específicos del cliente.
+              </p>
+            </div>
           </article>
         </div>
       </div>
@@ -234,7 +267,7 @@
       </div>
 
       <div>
-        <h3>Links Rapidos</h3>
+        <h3>Links Rápidos</h3>
         <ul class="footer-links">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="portones.html">Portones</a></li>

@@ -47,25 +47,38 @@
         <span class="logo-text">Walls Construcciones</span>
       </a>
 
-      <button
-        class="nav-toggle"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <nav class="nav" id="primary-navigation">
+          <ul class="nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="portones.html">Portones</a></li>
+            <li><a class="active" href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
+          </ul>
+        </nav>
 
-      <nav class="nav" id="primary-navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="portones.html">Portones</a></li>
-          <li><a class="active" href="servicios.html">Servicios</a></li>
-          <li><a href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
-        </ul>
-      </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Cambiar entre modo claro y modo oscuro"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-text">Modo oscuro</span>
+        </button>
+
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -87,37 +100,57 @@
           <h2>Servicios principales de Walls Construcciones</h2>
         </div>
 
-        <div class="cards-grid">
-          <article class="info-card">
-            <h3>Instalación</h3>
-            <p>
-              Montaje profesional de portones eléctricos y mecánicos con enfoque en
-              seguridad, durabilidad y buen funcionamiento.
-            </p>
+        <div class="cards-grid cards-grid-visual">
+          <article class="info-card info-card-image service-card">
+            <div class="card-media">
+              <img src="images/acceso-reforzado.png" alt="Instalación profesional de portones eléctricos y mecánicos" />
+            </div>
+            <div class="card-content">
+              <h3>Instalación</h3>
+              <p>
+                Montaje profesional de portones eléctricos y mecánicos con enfoque en
+                seguridad, durabilidad y buen funcionamiento.
+              </p>
+            </div>
           </article>
 
-          <article class="info-card">
-            <h3>Mantenimiento preventivo</h3>
-            <p>
-              Revisión periódica para prolongar la vida útil del sistema y reducir
-              riesgos de fallas.
-            </p>
+          <article class="info-card info-card-image service-card">
+            <div class="card-media">
+              <img src="images/mantenimiento.png" alt="Mantenimiento preventivo para sistemas de portones" />
+            </div>
+            <div class="card-content">
+              <h3>Mantenimiento preventivo</h3>
+              <p>
+                Revisión periódica para prolongar la vida útil del sistema y reducir
+                riesgos de fallas.
+              </p>
+            </div>
           </article>
 
-          <article class="info-card">
-            <h3>Reparación</h3>
-            <p>
-              Solución de fallas mecánicas o eléctricas para recuperar el desempeño
-              correcto del portón.
-            </p>
+          <article class="info-card info-card-image service-card">
+            <div class="card-media">
+              <img src="images/reparacion.png" alt="Reparación técnica de portones y automatización" />
+            </div>
+            <div class="card-content">
+              <h3>Reparación</h3>
+              <p>
+                Solución de fallas mecánicas o eléctricas para recuperar el desempeño
+                correcto del portón.
+              </p>
+            </div>
           </article>
 
-          <article class="info-card">
-            <h3>Automatización</h3>
-            <p>
-              Conversión o mejora de sistemas para lograr una experiencia más cómoda,
-              moderna y segura.
-            </p>
+          <article class="info-card info-card-image service-card">
+            <div class="card-media">
+              <img src="images/automatizacion.png" alt="Automatización moderna para portones de acceso" />
+            </div>
+            <div class="card-content">
+              <h3>Automatización</h3>
+              <p>
+                Conversión o mejora de sistemas para lograr una experiencia más cómoda,
+                moderna y segura.
+              </p>
+            </div>
           </article>
         </div>
       </div>
@@ -211,7 +244,7 @@
       </div>
 
       <div>
-        <h3>Links Rapidos</h3>
+        <h3>Links Rápidos</h3>
         <ul class="footer-links">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="portones.html">Portones</a></li>

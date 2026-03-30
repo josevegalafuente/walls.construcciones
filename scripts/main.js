@@ -1,11 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const html = document.documentElement;
+  const themeToggle = document.querySelector(".theme-toggle");
+  const themeToggleText = document.querySelector(".theme-toggle-text");
+  const storedTheme = localStorage.getItem("walls-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const applyTheme = (theme) => {
+    html.setAttribute("data-theme", theme);
+
+    if (themeToggle) {
+      const isDark = theme === "dark";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+
+      if (themeToggleText) {
+        themeToggleText.textContent = isDark ? "Modo claro" : "Modo oscuro";
+      }
+    }
+  };
+
+  const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
+  applyTheme(initialTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      applyTheme(newTheme);
+      localStorage.setItem("walls-theme", newTheme);
+    });
+  }
+
   const navToggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
+  const navLinks = document.querySelectorAll(".nav-list a");
 
   if (navToggle && nav) {
     navToggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
@@ -36,11 +76,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = slider.querySelector(".prev");
     const nextBtn = slider.querySelector(".next");
     let currentIndex = 0;
+    let autoSlideInterval;
 
     const showSlide = (index) => {
       slides.forEach((slide, i) => {
         slide.classList.toggle("active", i === index);
       });
+    };
+
+    const startAutoSlide = () => {
+      if (slides.length <= 1) return;
+
+      autoSlideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }, 5000);
+    };
+
+    const resetAutoSlide = () => {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
     };
 
     if (slides.length > 0) {
@@ -49,17 +104,16 @@ document.addEventListener("DOMContentLoaded", () => {
       nextBtn?.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
+        resetAutoSlide();
       });
 
       prevBtn?.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         showSlide(currentIndex);
+        resetAutoSlide();
       });
 
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-      }, 5000);
+      startAutoSlide();
     }
   }
 
@@ -105,13 +159,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const showError = (input, message) => {
       input.classList.add("input-error");
       const errorBox = input.parentElement.querySelector(".error-message");
-      if (errorBox) errorBox.textContent = message;
+
+      if (errorBox) {
+        errorBox.textContent = message;
+      }
     };
 
     const clearError = (input) => {
       input.classList.remove("input-error");
       const errorBox = input.parentElement.querySelector(".error-message");
-      if (errorBox) errorBox.textContent = "";
+
+      if (errorBox) {
+        errorBox.textContent = "";
+      }
     };
 
     quoteForm.addEventListener("submit", (event) => {
@@ -133,7 +193,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (!isValid) {
-        if (successMessage) successMessage.textContent = "";
+        if (successMessage) {
+          successMessage.textContent = "";
+        }
         return;
       }
 
@@ -141,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (successMessage) {
         successMessage.textContent =
-          "Tu solicitud fue validada correctamente. Ya puedes conectar este formulario con EmailJS, Formspree o un backend.";
+          "Tu solicitud fue validada correctamente. Ahora puedes conectar este formulario con EmailJS, Formspree o tu backend.";
       }
     });
 

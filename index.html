@@ -34,7 +34,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styles.css" />
   <script src="scripts/main.js" defer></script>
 </head>
 <body>
@@ -47,30 +47,43 @@
         <span class="logo-text">Walls Construcciones</span>
       </a>
 
-      <button
-        class="nav-toggle"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <nav class="nav" id="primary-navigation">
+          <ul class="nav-list">
+            <li><a class="active" href="index.html">Inicio</a></li>
+            <li><a href="portones.html">Portones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
+          </ul>
+        </nav>
 
-      <nav class="nav" id="primary-navigation">
-        <ul class="nav-list">
-          <li><a class="active" href="index.html">Inicio</a></li>
-          <li><a href="portones.html">Portones</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="proyectos-cotizacion.html">Proyectos y Cotización</a></li>
-        </ul>
-      </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Cambiar entre modo claro y modo oscuro"
+          aria-pressed="false"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span class="theme-toggle-text">Modo oscuro</span>
+        </button>
+
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero">
+    <section class="hero hero-home">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">Portones eléctricos y mecánicos a medida</p>
@@ -93,7 +106,7 @@
           </ul>
         </div>
 
-        <div class="hero-card reveal">
+        <div class="hero-card hero-card-highlight reveal">
           <div class="hero-card-inner">
             <h2>¿Qué encontrarás en el sitio?</h2>
             <ul class="feature-list">
