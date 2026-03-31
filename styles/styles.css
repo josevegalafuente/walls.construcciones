@@ -139,14 +139,11 @@ textarea {
   font-weight: 700;
 }
 
-.logo-mark {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.28);
-  border-radius: 50%;
-  font-size: 0.95rem;
+.logo-image {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
   flex-shrink: 0;
 }
 
@@ -284,6 +281,38 @@ textarea {
   align-items: center;
 }
 
+.page-hero-image {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  background-color: #10201c;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-hero-portones {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.58) 45%,
+      rgba(0, 0, 0, 0.32) 100%
+    ),
+    url("../images/hero-portones.png") center center / cover no-repeat;
+}
+
+.page-hero-servicios {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.58) 45%,
+      rgba(0, 0, 0, 0.32) 100%
+    ),
+    url("../images/hero-servicios.jpeg") center center / cover no-repeat;
+}
+
 .eyebrow {
   color: var(--primary);
   font-weight: 700;
@@ -300,17 +329,40 @@ h3 {
   margin-top: 0;
 }
 
-.hero h1,
-.page-hero h1 {
+.hero h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
   margin-bottom: 1rem;
   color: #ffffff;
 }
 
-.hero-text,
+.page-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.hero-text {
+  max-width: 60ch;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .page-hero p {
   max-width: 60ch;
   color: var(--text-soft);
+}
+
+.page-hero-image .eyebrow {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.page-hero-image h1 {
+  color: #ffffff;
+  max-width: 12ch;
+}
+
+.page-hero-image p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 58ch;
 }
 
 .hero-actions,
@@ -901,15 +953,46 @@ html[data-theme="dark"] .hero-card-highlight {
   }
 
   .hero-home {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(143, 141, 138, 0.86) 0%,
-      rgba(87, 87, 87, 0.68) 55%,
-      rgba(247, 243, 236, 0.35) 100%
-    ),
-    url("../images/cover.jpeg") center center / cover no-repeat;
-}
+    background:
+      linear-gradient(
+        180deg,
+        rgba(143, 141, 138, 0.86) 0%,
+        rgba(87, 87, 87, 0.68) 55%,
+        rgba(247, 243, 236, 0.35) 100%
+      ),
+      url("../images/cover.jpeg") center center / cover no-repeat;
+  }
+
+  .page-hero-image {
+    min-height: 340px;
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .page-hero-portones {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.58) 55%,
+        rgba(0, 0, 0, 0.4) 100%
+      ),
+      url("../images/hero-portones.jpg") center center / cover no-repeat;
+  }
+
+  .page-hero-servicios {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.58) 55%,
+        rgba(0, 0, 0, 0.4) 100%
+      ),
+      url("../images/hero-servicios.jpg") center center / cover no-repeat;
+  }
+
+  .page-hero-image h1 {
+    max-width: 100%;
+  }
 
   .slider {
     gap: 0.6rem;
