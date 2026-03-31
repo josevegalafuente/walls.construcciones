@@ -976,7 +976,7 @@ html[data-theme="dark"] .hero-card-highlight {
         rgba(0, 0, 0, 0.58) 55%,
         rgba(0, 0, 0, 0.4) 100%
       ),
-      url("../images/hero-portones.jpg") center center / cover no-repeat;
+      url("../images/hero-portones.png") center center / cover no-repeat;
   }
 
   .page-hero-servicios {
@@ -987,7 +987,7 @@ html[data-theme="dark"] .hero-card-highlight {
         rgba(0, 0, 0, 0.58) 55%,
         rgba(0, 0, 0, 0.4) 100%
       ),
-      url("../images/hero-servicios.jpg") center center / cover no-repeat;
+      url("../images/hero-servicios.jpeg") center center / cover no-repeat;
   }
 
   .page-hero-image h1 {
